@@ -16,6 +16,7 @@ import { useAuth } from '../Auth';
 import ActivityCategoryTable from '../history/ActivityCategoryTable';
 import ActivityInputDialog from '../activityInput/ActivityInputDialog';
 import AirtablePropTypes from '../Airtable/PropTypes';
+import AssessmentCompleteDialog from './AssessmentCompleteDialog';
 import BackgroundHeader from '../BackgroundHeader';
 import EmploymentOutlookLauchpad from './EmploymentOutlookLauchpad';
 import FirebasePropTypes from '../Firebase/PropTypes';
@@ -248,6 +249,7 @@ function getTasks(_props, limit) {
 const DIALOGS = {
   ACTIVITY_INPUT: 'ActivityInputDialog',
   UPCOMING_INTERVIEW: 'UpcomingInterviewDialog',
+  ASSESSMENT_COMPLETE: 'AssessmentCompleteDialog',
 };
 
 // eslint-disable-next-line sonarjs/cognitive-complexity
@@ -299,6 +301,10 @@ export default function Dashboard(props) {
       />
       <UpcomingInterviewDialog
         show={activeDialog === DIALOGS.UPCOMING_INTERVIEW}
+        onClose={() => setActiveDialog()}
+      />
+      <AssessmentCompleteDialog
+        show={activeDialog === DIALOGS.ASSESSMENT_COMPLETE}
         onClose={() => setActiveDialog()}
       />
       <BackgroundHeader>
