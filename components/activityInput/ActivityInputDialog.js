@@ -107,6 +107,11 @@ const ACTIVITY_TYPES = [
     label: 'Other',
     category: AirtablePropTypes.TASK_CATEGORIES.other,
   },
+  {
+    value: 'assessment-complete',
+    label: 'Completed assessment',
+    category: AirtablePropTypes.TASK_CATEGORIES.other,
+  },
 ];
 
 const TIME_SPENT_OPTIONS = [
