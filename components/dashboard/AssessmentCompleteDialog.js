@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   },
 });
 
-const MAX_WIDTH = 'sm';
+const MAX_WIDTH = 'xs';
 
 function AssessmentCompleteDialog({ show, onClose }) {
   const classes = useStyles();
@@ -30,20 +30,26 @@ function AssessmentCompleteDialog({ show, onClose }) {
       onExited={onClose}
     >
       <DialogTitle id="assessment-dialog-title" onClose={onClose}>
-        You’ve Completed Your Profile
-        <Typography variant="h5">Welcome to New Jersey Career Network</Typography>
+        <Typography variant="body1" align="center" style={{ marginTop: '3em' }}>
+          You’ve Completed Your Profile
+        </Typography>
+        <Typography variant="h2" align="center">
+          Welcome to New Jersey Career Network
+        </Typography>
       </DialogTitle>
       <DialogContent>
-        Thank you for joining the New Jersey Career Network! This is a massive step on your career
-        journey.
-        <br />
-        <br />
-        Research suggests that job seekers who track their progress are more successful and land
-        their next position faster.
-        <br />
-        <br />
-        Start tracking your progress now by adding search activities you&apos;ve completed in the
-        past week to your Activity Log!
+        <Typography variant="body2" align="center" style={{ marginBottom: '3em' }}>
+          Thank you for joining the New Jersey Career Network! This is a massive step on your career
+          journey.
+          <br />
+          <br />
+          Research suggests that job seekers who track their progress are more successful and land
+          their next position faster.
+          <br />
+          <br />
+          Start tracking your progress now by adding search activities you&apos;ve completed in the
+          past week to your Activity Log!
+        </Typography>
       </DialogContent>
     </Dialog>
   );
