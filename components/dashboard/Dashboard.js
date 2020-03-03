@@ -298,7 +298,6 @@ export default function Dashboard(props) {
   }, [doneTaskCount]);
 
   useEffect(() => {
-    console.log(showAssessmentComplete);
     if (showAssessmentComplete) {
       setActiveDialog(DIALOGS.ASSESSMENT_COMPLETE);
       const increment = firebase.firestore.FieldValue.increment(1);
@@ -407,7 +406,7 @@ export default function Dashboard(props) {
               variant="contained"
               size="large"
               color="primary"
-              onClick={() => setActiveDialog(DIALOGS.ASSESSMENT_COMPLETE)}
+              onClick={() => setActiveDialog(DIALOGS.ACTIVITY_INPUT)}
               data-intercom="log-activity-button"
             >
               Log Activity

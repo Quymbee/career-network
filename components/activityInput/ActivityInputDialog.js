@@ -175,6 +175,10 @@ function ActivityInputDialog({ fullScreen, show, onClose }) {
   const [formErrors, setFormErrors] = useState({});
   const [shuffledFeelings, setShuffledFeelings] = useState(shuffle(FEELINGS));
 
+  const activitiesForInput = ACTIVITY_TYPES.filter(
+    activity => activity.value !== 'assessment-complete'
+  );
+
   const datePickerTheme = createMuiTheme({
     overrides: {
       MuiFormControl: {
@@ -287,7 +291,7 @@ function ActivityInputDialog({ fullScreen, show, onClose }) {
                   })
                 }
               >
-                {ACTIVITY_TYPES.map(activity => (
+                {activitiesForInput.map(activity => (
                   <MenuItem
                     key={activity.value}
                     value={activity.value}
